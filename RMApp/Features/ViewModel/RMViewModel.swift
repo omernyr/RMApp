@@ -4,6 +4,7 @@
 //
 //  Created by macbook pro on 14.04.2023.
 //
+import Foundation
 
 protocol IRMViewModel {
     func fetchItems()
@@ -14,16 +15,26 @@ protocol IRMViewModel {
 }
 
 
-struct RMViewModel: IRMViewModel {
+class RMViewModel: IRMViewModel {
+    
+    var isLoading = false
+    var rickyMortyCharacters: [Character] = []
+    let rickMortyService: IRMAPIService
+    
+    init() {
+        rickMortyService = RMAPIService()
+    }
+    
     func fetchItems() {
-        <#code#>
+        self.changeLoading()
+        rickMortyService.fetchData { [weak self] characters in
+            self?.changeLoading()
+            self?.rickyMortyCharacters = characters ?? []
+        }
+        
     }
     
     func changeLoading() {
-        <#code#>
+        
     }
-    
-    var rickyMortyCharacters: [Character]
-    
-    var rickMortyService: IRMAPIService
 }
