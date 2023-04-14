@@ -17,6 +17,7 @@
 		52F7F88429E94F9E00D7CC7E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52F7F88329E94F9E00D7CC7E /* Alamofire */; };
 		52F7F88829E94FCF00D7CC7E /* RMAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88729E94FCF00D7CC7E /* RMAPIService.swift */; };
 		52F7F88A29E95BAA00D7CC7E /* RMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88929E95BAA00D7CC7E /* RMModel.swift */; };
+		52F7F88C29E976F800D7CC7E /* RMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88B29E976F800D7CC7E /* RMViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		52F7F87229E94D1900D7CC7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52F7F88729E94FCF00D7CC7E /* RMAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPIService.swift; sourceTree = "<group>"; };
 		52F7F88929E95BAA00D7CC7E /* RMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMModel.swift; sourceTree = "<group>"; };
+		52F7F88B29E976F800D7CC7E /* RMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,7 @@
 				52F7F88529E94FB500D7CC7E /* Extensions */,
 				52F7F87C29E94EF800D7CC7E /* Model */,
 				52F7F87D29E94F1400D7CC7E /* View */,
-				52F7F87E29E94F1A00D7CC7E /* Viewmodel */,
+				52F7F87E29E94F1A00D7CC7E /* ViewModel */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -111,11 +113,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		52F7F87E29E94F1A00D7CC7E /* Viewmodel */ = {
+		52F7F87E29E94F1A00D7CC7E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				52F7F88B29E976F800D7CC7E /* RMViewModel.swift */,
 			);
-			path = Viewmodel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		52F7F88529E94FB500D7CC7E /* Extensions */ = {
@@ -215,6 +218,7 @@
 				52F7F86929E94D1700D7CC7E /* RMViewController.swift in Sources */,
 				52F7F86529E94D1700D7CC7E /* AppDelegate.swift in Sources */,
 				52F7F86729E94D1700D7CC7E /* SceneDelegate.swift in Sources */,
+				52F7F88C29E976F800D7CC7E /* RMViewModel.swift in Sources */,
 				52F7F88A29E95BAA00D7CC7E /* RMModel.swift in Sources */,
 				52F7F88829E94FCF00D7CC7E /* RMAPIService.swift in Sources */,
 			);
