@@ -23,7 +23,8 @@ class RMViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.setDelegate(output: self)
+        viewModel.fetchItems()
         configure()
     }
     
