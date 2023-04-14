@@ -8,30 +8,29 @@
 import UIKit
 import SnapKit
 
+protocol RMOutPut {
+    func changeLoading(isLoad: Bool)
+    func saveDatas(values: [Character])
+}
+
 class RMViewController: UIViewController {
 
     let RMLabel = UILabel()
     let indicator = UIActivityIndicatorView()
     let tableView = UITableView()
-    var myList: [Character]? = []
+    private lazy var myList: [Character] = []
+    private lazy var viewModel: IRMViewModel = RMViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        RMAPIService().fetchData { characters in
-            
-            DispatchQueue.main.async {
-                self.myList = characters
-                self.tableView.reloadData()
-            }
-            
-        }
-        
+        configure()
+    }
+    
+    private func configure() {
         view.addSubview(RMLabel)
         RMLabel.addSubview(indicator)
         view.addSubview(tableView)
-        
         setupUI()
     }
     
@@ -45,7 +44,6 @@ class RMViewController: UIViewController {
         RMLabel.text = "Rick and Morty"
         
         indicator.color = .systemGreen
-        indicator.startAnimating()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -78,14 +76,25 @@ class RMViewController: UIViewController {
     }
 }
 
+extension RMViewController: RMOutPut {
+    func changeLoading(isLoad: Bool) {
+        isLoad ? indicator.startAnimating() : indicator.stopAnimating()
+    }
+    
+    func saveDatas(values: [Character]) {
+        myList = values
+        tableView.reloadData()
+    }
+}
+
 extension RMViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        myList!.count
+        myList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = myList![indexPath.row].name
+        cell.textLabel?.text = myList[indexPath.row].name
         return cell
     }
 }
