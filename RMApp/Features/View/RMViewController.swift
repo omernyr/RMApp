@@ -10,7 +10,7 @@ import SnapKit
 
 protocol RMOutPut {
     func changeLoading(isLoad: Bool)
-    func saveDatas(values: [Character])
+    func savceDatas(values: [Character])
 }
 
 class RMViewController: UIViewController {
@@ -19,12 +19,9 @@ class RMViewController: UIViewController {
     let indicator = UIActivityIndicatorView()
     let tableView = UITableView()
     private lazy var myList: [Character] = []
-    private lazy var viewModel: IRMViewModel = RMViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.setDelegate(output: self)
-        viewModel.fetchItems()
         configure()
     }
     
@@ -55,7 +52,6 @@ class RMViewController: UIViewController {
         
         makeConstraints()
     }
-    
     private func makeConstraints() {
         RMLabel.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(20)
@@ -80,13 +76,14 @@ class RMViewController: UIViewController {
 
 extension RMViewController: RMOutPut {
     func changeLoading(isLoad: Bool) {
-        isLoad ? indicator.startAnimating() : indicator.stopAnimating()
+        <#code#>
     }
     
-    func saveDatas(values: [Character]) {
-        myList = values
-        tableView.reloadData()
+    func savceDatas(values: [Character]) {
+        <#code#>
     }
+    
+    
 }
 
 extension RMViewController: UITableViewDelegate, UITableViewDataSource {
@@ -96,9 +93,8 @@ extension RMViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell: RMTableViewCell = tableView.dequeueReusableCell(withIdentifier: RMTableViewCell.Identifier.custom.rawValue) as? RMTableViewCell else { return UITableViewCell() }
-        
-        cell.saveModel(model: myList[indexPath.row])
+        let cell = UITableViewCell()
+        cell.textLabel?.text = myList[indexPath.row].name
         return cell
     }
 }
