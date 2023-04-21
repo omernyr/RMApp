@@ -1,52 +1,33 @@
-//
-//  RMViewModel.swift
-//  RMApp
-//
-//  Created by macbook pro on 14.04.2023.
-//
 import Foundation
 
 protocol IRMViewModel {
-    func fetchItems()
     func changeLoading()
+    func fetchItems()
     
-    var rickyMortyCharacters: [Character] { get set }
-    var rickMortyService: IRMAPIService { get }
-    
-    var rickMortOutPut: RMOutPut? { get }
-    
-    func setDelegate(output: RMOutPut)
+    var RMCharacters: [Character] { get set }
+    var RMService: IRMAPIService { get }
 }
 
-
-final class RMViewModel: IRMViewModel {
+class RMViewModel: IRMViewModel {
     
-    var rickMortOutPut: RMOutPut?
-    
-    func setDelegate(output: RMOutPut) {
-        rickMortOutPut = output
-    }
-    
-    var isLoading = false
-    var rickyMortyCharacters: [Character] = []
-    let rickMortyService: IRMAPIService
+    var RMCharacters: [Character] = []
+    private var isLoading = false
+    let RMService: IRMAPIService
     
     init() {
-        rickMortyService = RMAPIService()
+        RMService = RMAPIService()
     }
     
+    
     func fetchItems() {
-        self.changeLoading()
-        rickMortyService.fetchData { [weak self] characters in
-            self?.changeLoading()
-            self?.rickyMortyCharacters = characters ?? []
-            self?.rickMortOutPut?.saveDatas(values: self?.rickyMortyCharacters ?? [])
+        changeLoading()
+        RMService.fetchData { response in
+            self.changeLoading()
+            self.RMCharacters = response ?? []
         }
-        
     }
     
     func changeLoading() {
-        isLoading = !isLoading
-        rickMortOutPut?.changeLoading(isLoad: isLoading)
+    
     }
 }
