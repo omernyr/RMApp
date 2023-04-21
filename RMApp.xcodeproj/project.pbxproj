@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52B692D029F2C129003132D8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 52B692CF29F2C129003132D8 /* AlamofireImage */; };
 		52F7F86529E94D1700D7CC7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F86429E94D1700D7CC7E /* AppDelegate.swift */; };
 		52F7F86729E94D1700D7CC7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F86629E94D1700D7CC7E /* SceneDelegate.swift */; };
 		52F7F86929E94D1700D7CC7E /* RMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F86829E94D1700D7CC7E /* RMViewController.swift */; };
@@ -18,6 +19,7 @@
 		52F7F88829E94FCF00D7CC7E /* RMAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88729E94FCF00D7CC7E /* RMAPIService.swift */; };
 		52F7F88A29E95BAA00D7CC7E /* RMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88929E95BAA00D7CC7E /* RMModel.swift */; };
 		52F7F88C29E976F800D7CC7E /* RMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88B29E976F800D7CC7E /* RMViewModel.swift */; };
+		52F7F88F29E98B4F00D7CC7E /* RMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7F88E29E98B4F00D7CC7E /* RMTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		52F7F88729E94FCF00D7CC7E /* RMAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPIService.swift; sourceTree = "<group>"; };
 		52F7F88929E95BAA00D7CC7E /* RMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMModel.swift; sourceTree = "<group>"; };
 		52F7F88B29E976F800D7CC7E /* RMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMViewModel.swift; sourceTree = "<group>"; };
+		52F7F88E29E98B4F00D7CC7E /* RMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			files = (
 				52F7F88129E94F9100D7CC7E /* SnapKit in Frameworks */,
 				52F7F88429E94F9E00D7CC7E /* Alamofire in Frameworks */,
+				52B692D029F2C129003132D8 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +112,7 @@
 		52F7F87D29E94F1400D7CC7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52F7F88D29E98B3B00D7CC7E /* RMTableViewCell */,
 				52F7F86829E94D1700D7CC7E /* RMViewController.swift */,
 			);
 			path = View;
@@ -136,6 +141,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		52F7F88D29E98B3B00D7CC7E /* RMTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52F7F88E29E98B4F00D7CC7E /* RMTableViewCell.swift */,
+			);
+			path = RMTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +168,7 @@
 			packageProductDependencies = (
 				52F7F88029E94F9100D7CC7E /* SnapKit */,
 				52F7F88329E94F9E00D7CC7E /* Alamofire */,
+				52B692CF29F2C129003132D8 /* AlamofireImage */,
 			);
 			productName = RMApp;
 			productReference = 52F7F86129E94D1700D7CC7E /* RMApp.app */;
@@ -187,6 +201,7 @@
 			packageReferences = (
 				52F7F87F29E94F9100D7CC7E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				52F7F88229E94F9E00D7CC7E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				52B692CE29F2C129003132D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 52F7F86229E94D1700D7CC7E /* Products */;
 			projectDirPath = "";
@@ -218,6 +233,7 @@
 				52F7F86929E94D1700D7CC7E /* RMViewController.swift in Sources */,
 				52F7F86529E94D1700D7CC7E /* AppDelegate.swift in Sources */,
 				52F7F86729E94D1700D7CC7E /* SceneDelegate.swift in Sources */,
+				52F7F88F29E98B4F00D7CC7E /* RMTableViewCell.swift in Sources */,
 				52F7F88C29E976F800D7CC7E /* RMViewModel.swift in Sources */,
 				52F7F88A29E95BAA00D7CC7E /* RMModel.swift in Sources */,
 				52F7F88829E94FCF00D7CC7E /* RMAPIService.swift in Sources */,
@@ -440,6 +456,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		52B692CE29F2C129003132D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		52F7F87F29E94F9100D7CC7E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -459,6 +483,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		52B692CF29F2C129003132D8 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52B692CE29F2C129003132D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		52F7F88029E94F9100D7CC7E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52F7F87F29E94F9100D7CC7E /* XCRemoteSwiftPackageReference "SnapKit" */;
