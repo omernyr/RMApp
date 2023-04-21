@@ -48,6 +48,7 @@ class RMViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(RMTableViewCell.self, forCellReuseIdentifier: RMTableViewCell.Identifier.custom.rawValue)
         tableView.layer.borderWidth = 1.0
         tableView.layer.borderColor = UIColor.white.cgColor
         tableView.separatorStyle = .none
@@ -94,8 +95,10 @@ extension RMViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = myList[indexPath.row].name
+        
+        guard let cell: RMTableViewCell = tableView.dequeueReusableCell(withIdentifier: RMTableViewCell.Identifier.custom.rawValue) as? RMTableViewCell else { return UITableViewCell() }
+        
+        cell.saveModel(model: myList[indexPath.row])
         return cell
     }
 }
